@@ -20,7 +20,18 @@
             :src="post.cover"
           >
         </template>
-
+        <template v-if="postType === 'World'">
+          <span class="flex-1">
+            <h6 class="inline-block py-1 px-2 mr-1 bg-gray text-white text-sm font-medium rounded-sm">{{ post.category }}</h6>
+            <h3 class="card-title">{{ post.worldName }}</h3>
+            <p class="mt-2">{{ post.description }}</p>
+          </span>
+          <img
+            v-if="post.cover"
+            class="cover-image"
+            :src="post.cover"
+          >
+        </template>
         <template v-else>
           <span class="w-full">
             <span class="flex justify-between align-baseline">
@@ -55,7 +66,7 @@
       postType: {
         type: String,
         default: 'blog',
-        validator: (val) => ['blog', 'projects'].includes(val),
+        validator: (val) => ['blog', 'projects','World'].includes(val),
       },
       amount: { // ? https://content.nuxtjs.org/fetching#limitn
         type: Number,

@@ -89,6 +89,7 @@ collections:
     slug: '{{slug}}'
     preview_path: 'projects/{{slug}}'
     fields:
+      - { label: 'Created Date', name: 'createdAt', widget: 'datetime', format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: 'worldName', name: 'worldName', widget: 'string', required: true }
       - { label: 'world image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
 
