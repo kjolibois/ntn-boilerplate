@@ -95,8 +95,8 @@ collections:
 
   - name: 'CVWorldTabs'
     label: 'CVWorldTabs'
-    label_singular: 'World'
-    folder: 'content/Worldt'
+    label_singular: 'WorldInfo'
+    folder: 'content/WorldInfo'
     create: true
     format: 'frontmatter'
     slug: '{{slug}}'
