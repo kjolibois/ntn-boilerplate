@@ -80,3 +80,157 @@ collections:
           summary: '{{fields.image}}',
           field: { label: 'Image', name: 'image', widget: 'image' },
         }
+  - name: 'CareerVerseworldsList'
+    label: 'CvWorlds'
+    label_singular: 'World'
+    folder: 'content/World'
+    create: true
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    preview_path: 'projects/{{slug}}'
+    fields:
+      - { label: 'worldName', name: 'worldName', widget: 'string', required: true }
+      - { label: 'world image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
+
+  - name: 'CVWorldTabs'
+    label: 'CVWorldTabs'
+    label_singular: 'World'
+    folder: 'content/Worldt'
+    create: true
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    preview_path: 'wt/{{slug}}'
+    fields:
+      [ 
+        { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false },
+        { label: "Assigned World", name: "author",widget: "relation", collection: "CareerVerseworldsList",
+          search_fields: ['worldName'],
+          value_field: "{{slug}}",
+          display_fields: ["{{worldName}}"],
+        },
+        {
+          label: "Tab1",
+          name: "profile",
+          widget: "object",
+          summary: '{{fields.name}}: {{fields.birthdate}}',
+          fields:
+          [
+                { label: "Public",
+                    name: "public",
+                    widget: "boolean",
+                    default: true
+                },
+                {label: "Name", name: "name", widget: "string"},
+                { label: "Birthdate",
+                    name: "birthdate",
+                    widget: "date",
+                    default: "",
+                    format: "MM/DD/YYYY"
+                },
+                  {label: "Address",
+                    name: "address",
+                    widget: "object",
+                    collapsed: true,
+                    fields: [
+                      {label: "Street Address", name: "street", widget: "string"},
+                      {label: "City", name: "city", widget: "string"},
+                      {label: "Postal Code", name: "post-code", widget: "string"}
+                    ]
+                  }
+          ]
+        },
+        {
+          label: "Tab2",
+          name: "tab2",
+          widget: "object",
+          summary: '{{fields.name}}: {{fields.birthdate}}',
+          fields:
+          [
+                { label: "Public",
+                    name: "public",
+                    widget: "boolean",
+                    default: true
+                },
+                {label: "Name", name: "name", widget: "string"},
+                { label: "Birthdate",
+                    name: "birthdate",
+                    widget: "date",
+                    default: "",
+                    format: "MM/DD/YYYY"
+                },
+                  {label: "Address",
+                    name: "address",
+                    widget: "object",
+                    collapsed: true,
+                    fields: [
+                      {label: "Street Address", name: "street", widget: "string"},
+                      {label: "City", name: "city", widget: "string"},
+                      {label: "Postal Code", name: "post-code", widget: "string"}
+                    ]
+                  }
+          ]
+        },
+        {
+          label: "Tab3",
+          name: "tab3",
+          widget: "object",
+          summary: '{{fields.name}}: {{fields.birthdate}}',
+          fields:
+          [
+                { label: "Public",
+                    name: "public",
+                    widget: "boolean",
+                    default: true
+                },
+                {label: "Name", name: "name", widget: "string"},
+                { label: "Birthdate",
+                    name: "birthdate",
+                    widget: "date",
+                    default: "",
+                    format: "MM/DD/YYYY"
+                },
+                  {label: "Address",
+                    name: "address",
+                    widget: "object",
+                    collapsed: true,
+                    fields: [
+                      {label: "Street Address", name: "street", widget: "string"},
+                      {label: "City", name: "city", widget: "string"},
+                      {label: "Postal Code", name: "post-code", widget: "string"}
+                    ]
+                  }
+          ]
+        },
+        {
+          label: "Tab4",
+          name: "tab4",
+          widget: "object",
+          summary: '{{fields.name}}: {{fields.birthdate}}',
+          fields:
+          [
+                { label: "Public",
+                    name: "public",
+                    widget: "boolean",
+                    default: true
+                },
+                {label: "Name", name: "name", widget: "string"},
+                { label: "Birthdate",
+                    name: "birthdate",
+                    widget: "date",
+                    default: "",
+                    format: "MM/DD/YYYY"
+                },
+                  {label: "Address",
+                    name: "address",
+                    widget: "object",
+                    collapsed: true,
+                    fields: [
+                      {label: "Street Address", name: "street", widget: "string"},
+                      {label: "City", name: "city", widget: "string"},
+                      {label: "Postal Code", name: "post-code", widget: "string"}
+                    ]
+                  }
+          ]
+        }
+      ]  
+           
